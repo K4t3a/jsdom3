@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Выпадающее меню</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <ul class="menu">
+        <li class="link-submenu">Pc games
+            <ul class="submenu">
+                <li class="link-submenu">Cooperative
+                    <ul class="submenu">
+                        <li>Shooters</li>
+                        <li>Adventure</li>
+                        <li>Puzzles</li>
+                    </ul>
+                </li>
+                        <li class="link-submenu">Singleplayer
+                    <ul class="submenu">
+                        <li>Horrors</li>
+                        <li>Platformers</li>
+                        <li>RPGs</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="link-submenu">PS/Xbox games
+            <ul class="submenu">
+                <li class="link-submenu">Cooperative
+                    <ul class="submenu">
+                        <li>Action</li>
+                        <li>Family</li>
+                        <li>Platformers</li>
+                    </ul>
+                </li>
+                <li class="link-submenu">Singleplayer
+                    <ul class="submenu">
+                        <li>Sports</li>
+                        <li>Strategy</li>
+                        <li>Races</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuItems = document.querySelectorAll('.link-submenu');
+
+            menuItems.forEach(item => {
+                item.addEventListener('click', function(event) {
+                    event.stopPropagation();
+                    const submenu = this.querySelector('.submenu');
+                    if (submenu) {
+                        submenu.classList.toggle('show');
+                    } else {
+                        alert('go to link');
+                    }
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>
